@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>9. Graphics and Visualization &mdash; JWST Astronomy Data Analysis Tools Roadmap v0.1</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="JWST Astronomy Data Analysis Tools Roadmap v0.1" href="index.html" />
+    <link rel="next" title="10. Development Timeline" href="timeline.html" />
+    <link rel="prev" title="8. The Computational Toolbox" href="comp_toolbox.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">JWST Astronomy Data Analysis Tools Roadmap v0.1</a></div>
+        <div class="rel">
+          <a href="comp_toolbox.html" title="8. The Computational Toolbox"
+             accesskey="P">previous</a> |
+          <a href="timeline.html" title="10. Development Timeline"
+             accesskey="N">next</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="index.html"><img src="_static/logo.png" border="0" alt="py4sci"/></a>
+</div>
+
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="graphics-and-visualization">
+<h1>9. Graphics and Visualization<a class="headerlink" href="#graphics-and-visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="d-image-display">
+<h2>9.1. 2D image display<a class="headerlink" href="#d-image-display" title="Permalink to this headline">¶</a></h2>
+<p>Probably the most popular 2D image display tool in use by the US community
+is <a class="reference external" href="http://hea-www.harvard.edu/RD/ds9/site/Home.html">ds9</a>, from SAO, which
+is a stand-alone application actively maintained at SAO. It has the
+ability to communicate with other tasks using
+<a class="reference external" href="http://hea-www.harvard.edu/RD/xpa/index.html">XPA</a> or
+<a class="reference external" href="http://www.ivoa.net/documents/SAMP/">SAMP</a>. Other sophisticated image display
+utilities for astronomical images include:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://aladin.u-strasbg.fr">Aladin</a></li>
+<li><a class="reference external" href="http://iraf.noao.edu/iraf/web/projects/x11iraf/ximtool.ps">ximtool</a></li>
+<li><a class="reference external" href="http://star-www.dur.ac.uk/~pdraper/gaia/gaia.html">GAIA::SkyCat</a></li>
+</ul>
+<p>The default will be to support image tools that communicate using SAMP. SAMP
+is a message-passing protocol, but doesn&#8217;t specify the functions that should
+be supported by the tools on either end or how to invoke those functions.
+Ds9, for example, has 1150 different <tt class="docutils literal"><span class="pre">xpaget</span></tt> and <tt class="docutils literal"><span class="pre">xpaset</span></tt> commands, supporting
+96 different areas of functionality. It would take a considerable effort
+to implement all of this functionality afresh in a new tool. Nevertheless
+there are some limitations of ds9 that make it worth considering. In particular,
+it is not particularly fast at loading images or zooming and panning, and
+is not designed to deal with very large images that do not fit entirely in memory.
+Both are in contrast to many tools available on the web that pan and zoom
+quite fast in extremely large images.</p>
+<p>Because there are good image viewers available, building a new 2D image
+viewer is not currently a high priority for STScI. However, it would be very useful
+to maintain a wish-list of features to include in any such tool (in addition
+to supporting all of ds9&#8217;s features).</p>
+</div>
+<div class="section" id="id1">
+<h2>9.2. 3D image display<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Observers using the MIRI or NIRSpec spectrographs on JWST will need a
+full-featured 3D image display tool. This must interact with analysis tools
+and 2D graphics tools and provide a variety of options for data selection
+and visualization. Under consideration are:</p>
+<ul class="simple">
+<li>ds9</li>
+<li><a class="reference external" href="http://www.glueviz.org/en/latest/">glue</a></li>
+<li>join forces with radio astronomers to provide a tool to support both communities.</li>
+</ul>
+</div>
+<div class="section" id="interactive-2d-3d-graphics">
+<h2>9.3. Interactive 2D &amp; 3D graphics<a class="headerlink" href="#interactive-2d-3d-graphics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-graphics">
+<h3>9.3.1. 2D graphics<a class="headerlink" href="#d-graphics" title="Permalink to this headline">¶</a></h3>
+<p>Within python, the standard is <a class="reference external" href="http://matplotlib.org">matplotlib</a>, which has
+had heavy STScI involvement (and some funding) in its development. It supports
+multiple &#8220;backends&#8221; to build in device and GUI independence. Efforts are underway
+to make it possible to plot interactively in a web browser. Most users
+interact with matplotlib via <a class="reference external" href="http://matplotlib.org/api/pyplot_api.html">pyplot</a>,
+which provides a MATLAB-like plotting framework.</p>
+<div class="section" id="relatively-certain">
+<h4>9.3.1.1. Relatively certain<a class="headerlink" href="#relatively-certain" title="Permalink to this headline">¶</a></h4>
+<p>For 2D graphics, the plan is to continue to improve matplotlib and use
+it as the basis for both interactive and publication-quality graphics.</p>
+</div>
+<div class="section" id="under-consideration">
+<h4>9.3.1.2. Under consideration<a class="headerlink" href="#under-consideration" title="Permalink to this headline">¶</a></h4>
+<p>Matplotlib&#8217;s greatest weakness is probably speed, which makes it not particularly
+suitable to video frame-rate animations or real-time updates. While most
+astronomers don&#8217;t need these capabilities for day-to-day data analysis,
+they are occasionally needed. For speed, it is useful to consider hardware-accelarated
+graphics, such as that provided by <a class="reference external" href="http://www.cityinabottle.org/nodebox/">NodeBox for OpenGL</a>.
+Another potential weakness of Matplotlib is that it is was not originally
+engineered to operate in a web browser. The <a class="reference external" href="http://www.continuum.io/developer-resources">Bokeh</a>
+visualization library, under development at Continuum Analytics, aims to implement
+the <a class="reference external" href="http://www.cs.uic.edu/~wilkinson/TheGrammarOfGraphics/GOG.html">Grammar of Graphics</a>, which
+has become popular in statistical packages such as <a class="reference external" href="http://www.r-project.org">R</a>.</p>
+<p>There is also some interest in having the capability of making dynamic
+graphs, such as those provided by the <a class="reference external" href="http://d3js.org">d3 javascript library</a>.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>9.3.2. 3D graphics<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>9.3.2.1. Relatively certain<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Matplotlib provides some 3D capabilities within the
+<a class="reference external" href="http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html">mplot3d</a> package.</p>
+</div>
+<div class="section" id="id4">
+<h4>9.3.2.2. Under consideration<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>There are other options for 3D visualization as well, including:</p>
+<ul class="simple">
+<li>Mayavi</li>
+<li><a class="reference external" href="http://www.vpython.org">VPython</a> (licensing issues?).</li>
+<li><a class="reference external" href="http://www.pyqtgraph.org">PyQtgraph</a> 2D and 3D visualization.</li>
+<li><a class="reference external" href="http://docs.enthought.com/mayavi/mayavi/">Mayavi</a> 3D visualization.</li>
+<li><a class="reference external" href="http://vtk.org">VTK</a> 3D computer graphics with python wrappers.</li>
+<li><a class="reference external" href="http://http://www.paraview.org">Paraview</a> An open-source python-scriptable 3D visualization application aimed at very large datasets.</li>
+<li><a class="reference external" href="http://yt-project.org">yt</a> A volumetric data-analysis program for astrophysical simulations.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="publication-quality-graphics">
+<h2>9.4. Publication-quality graphics<a class="headerlink" href="#publication-quality-graphics" title="Permalink to this headline">¶</a></h2>
+<p>The plan is to continue to improve matplotlib and use it as the basis for
+publication-quality graphics.</p>
+</div>
+<div class="section" id="easy-to-construct-widgets">
+<h2>9.5. Easy-to-construct widgets<a class="headerlink" href="#easy-to-construct-widgets" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="easy-to-construct-web-graphics">
+<h2>9.6. Easy-to-construct web graphics<a class="headerlink" href="#easy-to-construct-web-graphics" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="exec_summary.html">1. Executive Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">2. The vision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#guiding-principles">3. Guiding principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#why-do-we-need-new-tools">4. Why do we need new tools?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">5. Science Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">6. Technologies and Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">7. Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comp_toolbox.html">8. The Computational Toolbox</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">9. Graphics and Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#d-image-display">9.1. 2D image display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">9.2. 3D image display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-2d-3d-graphics">9.3. Interactive 2D &amp; 3D graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publication-quality-graphics">9.4. Publication-quality graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#easy-to-construct-widgets">9.5. Easy-to-construct widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#easy-to-construct-web-graphics">9.6. Easy-to-construct web graphics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">10. Development Timeline</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="comp_toolbox.html" title="8. The Computational Toolbox"
+             >previous</a> |
+          <a href="timeline.html" title="10. Development Timeline"
+             >next</a> |
+          <a href="genindex.html" title="General Index"
+             >index</a>
+            <br/>
+            <a href="_sources/graphics.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, Henry Ferguson, Perry Greenfield, and Alberto Conti.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

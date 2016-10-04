@@ -1,0 +1,147 @@
+**********
+The vision
+**********
+
+Ensure that astronomers are equipped with software tools to analyze and interpret JWST data efficiently right from the start of the mission.
+============================================================================================================================================
+
+Reduce the necessity for astronomers to write data-analysis software
+====================================================================
+
+Make it easier to do so when necessary
+======================================
+
+Provide a richer set of tools upn which to build
+================================================
+
+Make it easy to share & re-use code
+===================================
+
+Improve repeatability
+=====================
+
+******************
+Guiding principles
+******************
+
+Open source
+===========
+
+Easy to install
+===============
+
+All python & C dependencies included with the distribution?
+-----------------------------------------------------------
+
+Automatic updates ("call home")
+-------------------------------
+
+Well documented
+===============
+
+User guides, cookbooks, tutorials
+---------------------------------
+
+help command, help buttons
+--------------------------
+
+coding reference guide, API docs
+--------------------------------
+
+comments in source code
+-----------------------
+
+Easy to extend
+==============
+
+modular
+-------
+
+consistent APIs
+---------------
+
+easy to use libraries
+---------------------
+
+Multiple interfaces
+===================
+
+scripting
+---------
+
+command line
+------------
+
+Multiple GUIs
+-------------
+
+client-server
+-------------
+
+Stable, widely adopted languages
+================================
+
+C
+-
+
+Python
+------
+
+Javascript (for browser)
+------------------------
+
+Stable, widely adopted libraries
+================================
+
+numpy
+-----
+
+scipy
+-----
+
+matplotlib
+----------
+
+astropy
+-------
+
+Leverage existing codes & algorithms
+====================================
+
+*************************
+Why do we need new tools?
+*************************
+
+Make science more efficient
+===========================
+
+Remove scientist dependency on iraf
+===================================
+
+Modern programming language
+===========================
+
+Make better use of community code
+=================================
+
+Modern algorithms where relevant
+================================
+
+Leverage advances in computer hardware
+======================================
+
+full 64-bit
+-----------
+
+multiple cores
+--------------
+
+hardware graphics acceleration
+------------------------------
+
+GPUs if needed
+--------------
+
+Cloud services if needed
+------------------------
+

@@ -1,0 +1,23 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Executive Summary}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}The vision}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Guiding principles}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Open Source Software}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Licensing}{7}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Easy to install}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Well documented}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Easy to extend}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}Multiple interfaces}{9}{section.3.5}
+\contentsline {section}{\numberline {3.6}Stable, widely adopted languages}{10}{section.3.6}
+\contentsline {section}{\numberline {3.7}Stable, widely adopted libraries}{10}{section.3.7}
+\contentsline {section}{\numberline {3.8}Leverage existing codes \& algorithms}{11}{section.3.8}
+\contentsline {chapter}{\numberline {4}Why do we need new tools?}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Make science more efficient}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Remove scientist dependency on IRAF}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Modern programming language}{14}{section.4.3}
+\contentsline {section}{\numberline {4.4}Make better use of community code}{14}{section.4.4}
+\contentsline {section}{\numberline {4.5}Modern algorithms where relevant}{15}{section.4.5}
+\contentsline {section}{\numberline {4.6}Leverage advances in computer hardware}{15}{section.4.6}
+\contentsline {chapter}{\numberline {5}Science Use Cases}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}Faint Galaxies}{17}{section.5.1}
+\contentsline {chapter}{\numberline {6}Indices and tables}{19}{chapter.6}
