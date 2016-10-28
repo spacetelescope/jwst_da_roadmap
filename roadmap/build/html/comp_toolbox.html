@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. The Computational Toolbox &mdash; JWST Astronomy Data Analysis Tools Roadmap v0.1</title>
+    <title>8. The Computational Toolbox &#8212; JWST Astronomy Data Analysis Tools Roadmap v0.1</title>
     
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -25,17 +23,18 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="JWST Astronomy Data Analysis Tools Roadmap v0.1" href="index.html" />
     <link rel="next" title="9. Graphics and Visualization" href="graphics.html" />
     <link rel="prev" title="7. Architecture" href="architecture.html" /> 
   </head>
-  <body>
-    <div class="header-wrapper">
+  <body role="document">
+    <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
           href="index.html">JWST Astronomy Data Analysis Tools Roadmap v0.1</a></div>
-        <div class="rel">
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="architecture.html" title="7. Architecture"
              accesskey="P">previous</a> |
           <a href="graphics.html" title="9. Graphics and Visualization"
@@ -58,7 +57,7 @@
             
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="the-computational-toolbox">
 <h1>8. The Computational Toolbox<a class="headerlink" href="#the-computational-toolbox" title="Permalink to this headline">¶</a></h1>
@@ -71,13 +70,13 @@ or data from space observatories, but there is a need to include tools
 for standard kinds of ground-based data analysis. These are included,
 although the list may be less complete than for the JWST tools.</p>
 <p>The figure below provides birds-eye view of the tools described in this section.</p>
-<div class="figure" style="width: 100%">
+<div class="figure" id="id8" style="width: 100%">
 <a class="reference internal image-reference" href="_images/computational_toolbox.png"><img alt="computational toolbox overview" src="_images/computational_toolbox.png" style="width: 100.0%; height: 615.0px;" /></a>
-<p class="caption">A high-level categorization of the tasks described in this section. Many of
+<p class="caption"><span class="caption-text">A high-level categorization of the tasks described in this section. Many of
 the nodes in this map have sub-nodes and sub-sub-nodes that are not shown
 but would generally comprise separate tools. At the level of detail shown
 here there are ~50 categories of tools. In the end this will probably expand
-into of order 10<sup>3</sup> individual tools.</p>
+into of order 10<sup>3</sup> individual tools.</span></p>
 </div>
 <div class="section" id="general-purpose-multi-dimensional-array-analysis-tools">
 <h2>8.1. General-purpose multi-dimensional Array Analysis tools<a class="headerlink" href="#general-purpose-multi-dimensional-array-analysis-tools" title="Permalink to this headline">¶</a></h2>
@@ -96,7 +95,7 @@ them convenient to use on astronomical data sets. This includes:</p>
 <div class="section" id="interactive-image-measurements">
 <h3>8.1.1. Interactive Image Measurements<a class="headerlink" href="#interactive-image-measurements" title="Permalink to this headline">¶</a></h3>
 <p>The new tools need to have the kinds of functionality currently supplied
-by IRAF&#8217;s <tt class="docutils literal"><span class="pre">imexamine</span></tt> tool. This includes:</p>
+by IRAF&#8217;s <code class="docutils literal"><span class="pre">imexamine</span></code> tool. This includes:</p>
 <ul class="simple">
 <li>centroids</li>
 <li>contours</li>
@@ -202,7 +201,7 @@ in the spectroscopy section.</p>
 <p>Even if JWST images are perfectly rectified by the standard pipeline, it will be frequently
 necessary to register other images to the JWST images. The geometric distortion properties
 of these images are sometimes unknown and must be derived using the data themselves.
-The various tasks involved (many of which are in the IRAF <tt class="docutils literal"><span class="pre">immatch</span></tt> package) include:</p>
+The various tasks involved (many of which are in the IRAF <code class="docutils literal"><span class="pre">immatch</span></code> package) include:</p>
 <ul class="simple">
 <li>image distortion fitting</li>
 <li>image rectification</li>
@@ -214,11 +213,11 @@ The various tasks involved (many of which are in the IRAF <tt class="docutils li
 </div>
 <div class="section" id="nir-image-reduction-stacking">
 <h3>8.2.2. NIR Image Reduction &amp; Stacking<a class="headerlink" href="#nir-image-reduction-stacking" title="Permalink to this headline">¶</a></h3>
-<p>This would replace the functionality of the IRAF <tt class="docutils literal"><span class="pre">irred</span></tt> package.</p>
+<p>This would replace the functionality of the IRAF <code class="docutils literal"><span class="pre">irred</span></code> package.</p>
 </div>
 <div class="section" id="ccd-image-reduction-stacking">
 <h3>8.2.3. CCD Image Reduction &amp; Stacking<a class="headerlink" href="#ccd-image-reduction-stacking" title="Permalink to this headline">¶</a></h3>
-<p>This would replace the functionality of the IRAF <tt class="docutils literal"><span class="pre">ccdred</span></tt> package.</p>
+<p>This would replace the functionality of the IRAF <code class="docutils literal"><span class="pre">ccdred</span></code> package.</p>
 </div>
 <div class="section" id="peak-finding">
 <h3>8.2.4. Peak Finding<a class="headerlink" href="#peak-finding" title="Permalink to this headline">¶</a></h3>
@@ -696,8 +695,8 @@ Specific use cases include:</p>
 <ul class="simple">
 <li>Provide the means to take a few inputs –- such as emission line images or
 emission line datacubes -– to derive physical parameters (i.e.,
-<span class="math">\(n_e\)</span> from [Fe II]
-line ratio maps or <span class="math">\(A_v\)</span> from H2 line maps).</li>
+<img class="math" src="_images/math/493e3b4c79402433c6895e3e0e60a80fe45846a3.png" alt="n_e"/> from [Fe II]
+line ratio maps or <img class="math" src="_images/math/800f40855dd0314a978dbddfc0d0bda36d0576b1.png" alt="A_v"/> from H2 line maps).</li>
 <li>Have several canned relations available automatically (such as gas parameters
 for [Fe II] and H2 line regions, or common physical parameters derived from
 optical emission lines in red-shifted galaxies).</li>
@@ -926,7 +925,7 @@ Craig Markwardt&#8217;s popular <a class="reference external" href="http://www.p
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">5. Science Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">6. Technologies and Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">7. Architecture</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">8. The Computational Toolbox</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. The Computational Toolbox</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#general-purpose-multi-dimensional-array-analysis-tools">8.1. General-purpose multi-dimensional Array Analysis tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#imaging">8.2. Imaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#spectra-and-spectral-extraction">8.3. Spectra and Spectral Extraction</a></li>
@@ -940,16 +939,15 @@ Craig Markwardt&#8217;s popular <a class="reference external" href="http://www.p
 <li class="toctree-l1"><a class="reference internal" href="timeline.html">10. Development Timeline</a></li>
 </ul>
 
-          <h3 style="margin-top: 1.5em;">Search</h3>
-          <form class="search" action="search.html" method="get">
-            <input type="text" name="q" />
-            <input type="submit" value="Go" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            Enter search terms or a module, class or function name.
-          </p>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
         </div>
         <div class="clearer"></div>
       </div>
@@ -958,22 +956,26 @@ Craig Markwardt&#8217;s popular <a class="reference external" href="http://www.p
     <div class="footer-wrapper">
       <div class="footer">
         <div class="left">
-          <a href="architecture.html" title="7. Architecture"
-             >previous</a> |
-          <a href="graphics.html" title="9. Graphics and Visualization"
-             >next</a> |
-          <a href="genindex.html" title="General Index"
-             >index</a>
-            <br/>
-            <a href="_sources/comp_toolbox.txt"
-               rel="nofollow">Show Source</a>
+          <div role="navigation" aria-label="related navigaton">
+            <a href="architecture.html" title="7. Architecture"
+              >previous</a> |
+            <a href="graphics.html" title="9. Graphics and Visualization"
+              >next</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/comp_toolbox.txt"
+                rel="nofollow">Show Source</a>
+          </div>
         </div>
 
         <div class="right">
           
-    <div class="footer">
-        &copy; Copyright 2013, Henry Ferguson, Perry Greenfield, and Alberto Conti.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Henry Ferguson, Perry Greenfield, and Alberto Conti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
         </div>
         <div class="clearer"></div>

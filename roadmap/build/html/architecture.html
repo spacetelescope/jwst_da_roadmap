@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>7. Architecture &mdash; JWST Astronomy Data Analysis Tools Roadmap v0.1</title>
+    <title>7. Architecture &#8212; JWST Astronomy Data Analysis Tools Roadmap v0.1</title>
     
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -25,17 +23,18 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="JWST Astronomy Data Analysis Tools Roadmap v0.1" href="index.html" />
     <link rel="next" title="8. The Computational Toolbox" href="comp_toolbox.html" />
     <link rel="prev" title="6. Technologies and Infrastructure" href="infrastructure.html" /> 
   </head>
-  <body>
-    <div class="header-wrapper">
+  <body role="document">
+    <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
           href="index.html">JWST Astronomy Data Analysis Tools Roadmap v0.1</a></div>
-        <div class="rel">
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="infrastructure.html" title="6. Technologies and Infrastructure"
              accesskey="P">previous</a> |
           <a href="comp_toolbox.html" title="8. The Computational Toolbox"
@@ -58,11 +57,11 @@
             
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="architecture">
 <h1>7. Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference internal" href="#fig-architecture"><em>figure below</em></a> provides a high-level overview of the
+<p>The <a class="reference internal" href="#fig-architecture"><span class="std std-ref">figure below</span></a> provides a high-level overview of the
 architecture of the data-analysis tools.
 The goal is to keep the computational tools lightweight and modular,
 and insulated from details of the data structure on disk and the
@@ -87,9 +86,9 @@ that makes these all look the same to the event-driven interface layer.
 Sometimes the tools will interact with image displays and graphics
 through IPC channels with two-way communication. Other times, the tools
 will send their output without setting up an event-driven interaction.</p>
-<div class="figure" id="fig-architecture" style="width: 100%">
-<a class="reference internal image-reference" href="_images/strawman_architecture.png"><img alt="Analysis Tools Architecture" src="_images/strawman_architecture.png" style="width: 100.0%; height: 662.0px;" /></a>
-<p class="caption">A schematic view of the architecture of the data analysis tools.</p>
+<div class="figure" id="id1" style="width: 100%">
+<span id="fig-architecture"></span><a class="reference internal image-reference" href="_images/strawman_architecture.png"><img alt="Analysis Tools Architecture" src="_images/strawman_architecture.png" style="width: 100.0%; height: 662.0px;" /></a>
+<p class="caption"><span class="caption-text">A schematic view of the architecture of the data analysis tools.</span></p>
 </div>
 <p>There are a few things to note about this architecture.</p>
 <ul class="simple">
@@ -125,22 +124,21 @@ so that they can be edited and turned into scripts.)</li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html#why-do-we-need-new-tools">4. Why do we need new tools?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use_cases.html">5. Science Use Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="infrastructure.html">6. Technologies and Infrastructure</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">7. Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="comp_toolbox.html">8. The Computational Toolbox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graphics.html">9. Graphics and Image Displays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphics.html">9. Graphics and Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="timeline.html">10. Development Timeline</a></li>
 </ul>
 
-          <h3 style="margin-top: 1.5em;">Search</h3>
-          <form class="search" action="search.html" method="get">
-            <input type="text" name="q" />
-            <input type="submit" value="Go" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            Enter search terms or a module, class or function name.
-          </p>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
         </div>
         <div class="clearer"></div>
       </div>
@@ -149,22 +147,26 @@ so that they can be edited and turned into scripts.)</li>
     <div class="footer-wrapper">
       <div class="footer">
         <div class="left">
-          <a href="infrastructure.html" title="6. Technologies and Infrastructure"
-             >previous</a> |
-          <a href="comp_toolbox.html" title="8. The Computational Toolbox"
-             >next</a> |
-          <a href="genindex.html" title="General Index"
-             >index</a>
-            <br/>
-            <a href="_sources/architecture.txt"
-               rel="nofollow">Show Source</a>
+          <div role="navigation" aria-label="related navigaton">
+            <a href="infrastructure.html" title="6. Technologies and Infrastructure"
+              >previous</a> |
+            <a href="comp_toolbox.html" title="8. The Computational Toolbox"
+              >next</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/architecture.txt"
+                rel="nofollow">Show Source</a>
+          </div>
         </div>
 
         <div class="right">
           
-    <div class="footer">
-        &copy; Copyright 2013, Henry Ferguson, Perry Greenfield, and Alberto Conti.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Henry Ferguson, Perry Greenfield, and Alberto Conti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
         </div>
         <div class="clearer"></div>
